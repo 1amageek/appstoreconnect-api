@@ -1,5 +1,5 @@
 import * as jwt from "jsonwebtoken";
-import { Authentication, HttpBearerAuth } from "./api"
+import { HttpBearerAuth } from "./api"
 import { AgeRatingDeclarationsApi } from './api';
 import { AppAvailabilitiesApi } from './api';
 import { AppCategoriesApi } from './api';
@@ -118,9 +118,7 @@ export class AppStoreConnectClient {
   private issuerId: string;
   private apiKey: string;
   private privateKey: string;
-  
   private basePath?: string
-
   private auth: HttpBearerAuth
 
   constructor(issuerId: string, apiKey: string, privateKey: string, basePath?: string) {
@@ -129,6 +127,7 @@ export class AppStoreConnectClient {
     this.privateKey = privateKey;
     this.basePath = basePath
     this.auth = new HttpBearerAuth()
+    this.updateBearerToken()
   }
 
   updateBearerToken() {
@@ -715,8 +714,4 @@ export class AppStoreConnectClient {
     api.setDefaultAuthentication(this.auth)
     return api
   }
-
-
-
-
 }

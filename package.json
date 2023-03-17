@@ -12,7 +12,7 @@
   "engines": {
     "node": "18"
   },
-  "main": "lib/api.js",
+  "main": "lib/index.js",
   "dependencies": {
     "jsonwebtoken": "^9.0.0",
     "request": "^2.88.2"

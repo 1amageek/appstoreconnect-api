@@ -3,8 +3,9 @@
   "version": "0.1.0",
   "description": "AppStoreConnect API for TypeScript",
   "scripts": {
+    "build": "./node_modules/.bin/tsc -d",
+    "prepare": "npm run build",
     "lint": "eslint --ext .js,.ts .",
-    "build": "tsc",
     "build:watch": "tsc --watch",
     "og": "openapi-generator-cli"
   },

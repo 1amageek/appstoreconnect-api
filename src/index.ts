@@ -1,1 +1,1 @@
-import { AppStoreConnectClient } from "./client"
+export { AppStoreConnectClient } from "./client"

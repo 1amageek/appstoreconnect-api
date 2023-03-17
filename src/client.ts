@@ -1,4 +1,5 @@
-import * as jwt from "jsonwebtoken";
+import * as jwt from "jsonwebtoken"
+import { SignOptions } from "jsonwebtoken"
 import { HttpBearerAuth } from "./api"
 import { AgeRatingDeclarationsApi } from './api';
 import { AppAvailabilitiesApi } from './api';
@@ -113,45 +114,49 @@ import { TerritoriesApi } from './api';
 import { UserInvitationsApi } from './api';
 import { UsersApi } from './api';
 
+interface AppStoreConnectClientOptions {
+  issuerId?: string;
+  privateKeyId?: string;
+  privateKey?: string;
+  bearerToken?: string;
+  expirationTime?: number;
+}
 
 export class AppStoreConnectClient {
-  private issuerId: string;
-  private apiKey: string;
-  private privateKey: string;
+  private options: AppStoreConnectClientOptions
   private basePath?: string
   private auth: HttpBearerAuth
 
-  constructor(issuerId: string, apiKey: string, privateKey: string, basePath?: string) {
-    this.issuerId = issuerId;
-    this.apiKey = apiKey;
-    this.privateKey = privateKey;
+  constructor(options: AppStoreConnectClientOptions, basePath?: string) {
+    this.options = options;
     this.basePath = basePath
     this.auth = new HttpBearerAuth()
-    this.updateBearerToken()
+    this.updateBearerToken(options)
   }
 
-  updateBearerToken() {
-    const token = this._getBearerToken();
+  updateBearerToken(options: AppStoreConnectClientOptions) {
+    const token = this.createBearerToken(options);
     this.auth.accessToken = token;
   }
 
-  _getBearerToken(): string {
-    const tokenExpiration = Math.floor(Date.now() / 1000) + (20 * 60);
+  createBearerToken(options: AppStoreConnectClientOptions): string {
+    if (options.bearerToken) {
+      return options.bearerToken;
+    }
+    const expirationTime = options.expirationTime || 600;
+    const payload = {
+      iss: options.issuerId,
+      exp: Math.floor(Date.now() / 1000) + expirationTime,
+    };
     const header = {
       alg: 'ES256',
-      kid: this.apiKey
+      kid: options.privateKeyId,
     };
-    const payload = {
-      iss: this.issuerId,
-      exp: tokenExpiration,
-      aud: 'appstoreconnect-v1'
-    };
-    const token = jwt.sign(payload, this.privateKey, {
+    const signOptions: SignOptions = {
       algorithm: 'ES256',
-      expiresIn: 20 * 60,
-      header: header
-    });
-    return token;
+      header: header,
+    };
+    return jwt.sign(payload, options.privateKey as string, signOptions);
   }
 
   getAgeRatingDeclarationsApi(): AgeRatingDeclarationsApi {

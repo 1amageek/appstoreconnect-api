@@ -1,0 +1,25 @@
+{
+  "name": "typescript-converter",
+  "version": "1.0.0",
+  "description": "Converts TypeScript functions with multiple parameters into functions with a single object parameter",
+  "main": "convert.js",
+  "scripts": {
+    "install-deps": "npm install comment-parser escodegen esprima",
+    "build": "tsc -p tsconfig.json",
+    "convert": "node lib/convert.js"
+  },
+  "engines": {
+    "node": "18"
+  },
+  "devDependencies": {
+    "@types/escodegen": "^0.0.7",
+    "@types/esprima": "^4.0.3",
+    "@types/node": "^18.15.3"
+  },
+  "dependencies": {
+    "comment-parser": "^1.1.6",
+    "escodegen": "^2.0.0",
+    "esprima": "^4.0.1",
+    "typescript": "^5.0.2"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "target": "es6",
+    "module": "commonjs",
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": false,
+    "outDir": "lib",
+  },
+  "include": [
+    "_index.ts"
+    // , "convert.ts", "functionConverter.ts", "options.ts"
+  ]
+}

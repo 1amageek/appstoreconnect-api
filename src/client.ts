@@ -150,8 +150,6 @@ export class AppStoreConnectClient {
     };
     const signOptions: SignOptions = {
       algorithm: "ES256",
-      expiresIn: expirationTime,
-      issuer: options.issuerId,
       audience: "appstoreconnect-v1",
       header: {
         // The algorithm used to sign the token (ECDSA with SHA-256)

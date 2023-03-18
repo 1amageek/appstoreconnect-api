@@ -148,13 +148,19 @@ export class AppStoreConnectClient {
       iss: options.issuerId,
       exp: Math.floor(Date.now() / 1000) + expirationTime,
     };
-    const header = {
-      alg: 'ES256',
-      kid: options.privateKeyId,
-    };
     const signOptions: SignOptions = {
-      algorithm: 'ES256',
-      header: header,
+      algorithm: "ES256",
+      expiresIn: expirationTime,
+      issuer: options.issuerId,
+      audience: "appstoreconnect-v1",
+      header: {
+        // The algorithm used to sign the token (ECDSA with SHA-256)
+        alg: "ES256",
+        // The ID of the private key used to sign the token
+        kid: options.privateKeyId,
+        // The type of the token (JWT)
+        typ: "JWT",
+      },
     };
     return jwt.sign(payload, options.privateKey as string, signOptions);
   }

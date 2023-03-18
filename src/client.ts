@@ -161,562 +161,562 @@ export class AppStoreConnectClient {
 
   getAgeRatingDeclarationsApi(): AgeRatingDeclarationsApi {
     const api = new AgeRatingDeclarationsApi(this.basePath)
-    api.setDefaultAuthentication(this.auth)
+    api.setDefaultAuthentication({ auth: this.auth })
     return api
   }
   getAppAvailabilitiesApi(): AppAvailabilitiesApi {
     const api = new AppAvailabilitiesApi(this.basePath)
-    api.setDefaultAuthentication(this.auth)
+    api.setDefaultAuthentication({ auth: this.auth })
     return api
   }
   getAppCategoriesApi(): AppCategoriesApi {
     const api = new AppCategoriesApi(this.basePath)
-    api.setDefaultAuthentication(this.auth)
+    api.setDefaultAuthentication({ auth: this.auth })
     return api
   }
   getAppClipAdvancedExperienceImagesApi(): AppClipAdvancedExperienceImagesApi {
     const api = new AppClipAdvancedExperienceImagesApi(this.basePath)
-    api.setDefaultAuthentication(this.auth)
+    api.setDefaultAuthentication({ auth: this.auth })
     return api
   }
   getAppClipAdvancedExperiencesApi(): AppClipAdvancedExperiencesApi {
     const api = new AppClipAdvancedExperiencesApi(this.basePath)
-    api.setDefaultAuthentication(this.auth)
+    api.setDefaultAuthentication({ auth: this.auth })
     return api
   }
   getAppClipAppStoreReviewDetailsApi(): AppClipAppStoreReviewDetailsApi {
     const api = new AppClipAppStoreReviewDetailsApi(this.basePath)
-    api.setDefaultAuthentication(this.auth)
+    api.setDefaultAuthentication({ auth: this.auth })
     return api
   }
   getAppClipDefaultExperienceLocalizationsApi(): AppClipDefaultExperienceLocalizationsApi {
     const api = new AppClipDefaultExperienceLocalizationsApi(this.basePath)
-    api.setDefaultAuthentication(this.auth)
+    api.setDefaultAuthentication({ auth: this.auth })
     return api
   }
   getAppClipDefaultExperiencesApi(): AppClipDefaultExperiencesApi {
     const api = new AppClipDefaultExperiencesApi(this.basePath)
-    api.setDefaultAuthentication(this.auth)
+    api.setDefaultAuthentication({ auth: this.auth })
     return api
   }
   getAppClipHeaderImagesApi(): AppClipHeaderImagesApi {
     const api = new AppClipHeaderImagesApi(this.basePath)
-    api.setDefaultAuthentication(this.auth)
+    api.setDefaultAuthentication({ auth: this.auth })
     return api
   }
   getAppClipsApi(): AppClipsApi {
     const api = new AppClipsApi(this.basePath)
-    api.setDefaultAuthentication(this.auth)
+    api.setDefaultAuthentication({ auth: this.auth })
     return api
   }
   getAppCustomProductPageLocalizationsApi(): AppCustomProductPageLocalizationsApi {
     const api = new AppCustomProductPageLocalizationsApi(this.basePath)
-    api.setDefaultAuthentication(this.auth)
+    api.setDefaultAuthentication({ auth: this.auth })
     return api
   }
   getAppCustomProductPageVersionsApi(): AppCustomProductPageVersionsApi {
     const api = new AppCustomProductPageVersionsApi(this.basePath)
-    api.setDefaultAuthentication(this.auth)
+    api.setDefaultAuthentication({ auth: this.auth })
     return api
   }
   getAppCustomProductPagesApi(): AppCustomProductPagesApi {
     const api = new AppCustomProductPagesApi(this.basePath)
-    api.setDefaultAuthentication(this.auth)
+    api.setDefaultAuthentication({ auth: this.auth })
     return api
   }
   getAppEncryptionDeclarationDocumentsApi(): AppEncryptionDeclarationDocumentsApi {
     const api = new AppEncryptionDeclarationDocumentsApi(this.basePath)
-    api.setDefaultAuthentication(this.auth)
+    api.setDefaultAuthentication({ auth: this.auth })
     return api
   }
   getAppEncryptionDeclarationsApi(): AppEncryptionDeclarationsApi {
     const api = new AppEncryptionDeclarationsApi(this.basePath)
-    api.setDefaultAuthentication(this.auth)
+    api.setDefaultAuthentication({ auth: this.auth })
     return api
   }
   getAppEventLocalizationsApi(): AppEventLocalizationsApi {
     const api = new AppEventLocalizationsApi(this.basePath)
-    api.setDefaultAuthentication(this.auth)
+    api.setDefaultAuthentication({ auth: this.auth })
     return api
   }
   getAppEventScreenshotsApi(): AppEventScreenshotsApi {
     const api = new AppEventScreenshotsApi(this.basePath)
-    api.setDefaultAuthentication(this.auth)
+    api.setDefaultAuthentication({ auth: this.auth })
     return api
   }
   getAppEventVideoClipsApi(): AppEventVideoClipsApi {
     const api = new AppEventVideoClipsApi(this.basePath)
-    api.setDefaultAuthentication(this.auth)
+    api.setDefaultAuthentication({ auth: this.auth })
     return api
   }
   getAppEventsApi(): AppEventsApi {
     const api = new AppEventsApi(this.basePath)
-    api.setDefaultAuthentication(this.auth)
+    api.setDefaultAuthentication({ auth: this.auth })
     return api
   }
   getAppInfoLocalizationsApi(): AppInfoLocalizationsApi {
     const api = new AppInfoLocalizationsApi(this.basePath)
-    api.setDefaultAuthentication(this.auth)
+    api.setDefaultAuthentication({ auth: this.auth })
     return api
   }
   getAppInfosApi(): AppInfosApi {
     const api = new AppInfosApi(this.basePath)
-    api.setDefaultAuthentication(this.auth)
+    api.setDefaultAuthentication({ auth: this.auth })
     return api
   }
   getAppPreOrdersApi(): AppPreOrdersApi {
     const api = new AppPreOrdersApi(this.basePath)
-    api.setDefaultAuthentication(this.auth)
+    api.setDefaultAuthentication({ auth: this.auth })
     return api
   }
   getAppPreviewSetsApi(): AppPreviewSetsApi {
     const api = new AppPreviewSetsApi(this.basePath)
-    api.setDefaultAuthentication(this.auth)
+    api.setDefaultAuthentication({ auth: this.auth })
     return api
   }
   getAppPreviewsApi(): AppPreviewsApi {
     const api = new AppPreviewsApi(this.basePath)
-    api.setDefaultAuthentication(this.auth)
+    api.setDefaultAuthentication({ auth: this.auth })
     return api
   }
   getAppPricePointsApi(): AppPricePointsApi {
     const api = new AppPricePointsApi(this.basePath)
-    api.setDefaultAuthentication(this.auth)
+    api.setDefaultAuthentication({ auth: this.auth })
     return api
   }
   getAppPriceSchedulesApi(): AppPriceSchedulesApi {
     const api = new AppPriceSchedulesApi(this.basePath)
-    api.setDefaultAuthentication(this.auth)
+    api.setDefaultAuthentication({ auth: this.auth })
     return api
   }
   getAppScreenshotSetsApi(): AppScreenshotSetsApi {
     const api = new AppScreenshotSetsApi(this.basePath)
-    api.setDefaultAuthentication(this.auth)
+    api.setDefaultAuthentication({ auth: this.auth })
     return api
   }
   getAppScreenshotsApi(): AppScreenshotsApi {
     const api = new AppScreenshotsApi(this.basePath)
-    api.setDefaultAuthentication(this.auth)
+    api.setDefaultAuthentication({ auth: this.auth })
     return api
   }
   getAppStoreReviewAttachmentsApi(): AppStoreReviewAttachmentsApi {
     const api = new AppStoreReviewAttachmentsApi(this.basePath)
-    api.setDefaultAuthentication(this.auth)
+    api.setDefaultAuthentication({ auth: this.auth })
     return api
   }
   getAppStoreReviewDetailsApi(): AppStoreReviewDetailsApi {
     const api = new AppStoreReviewDetailsApi(this.basePath)
-    api.setDefaultAuthentication(this.auth)
+    api.setDefaultAuthentication({ auth: this.auth })
     return api
   }
   getAppStoreVersionExperimentTreatmentLocalizationsApi(): AppStoreVersionExperimentTreatmentLocalizationsApi {
     const api = new AppStoreVersionExperimentTreatmentLocalizationsApi(this.basePath)
-    api.setDefaultAuthentication(this.auth)
+    api.setDefaultAuthentication({ auth: this.auth })
     return api
   }
   getAppStoreVersionExperimentTreatmentsApi(): AppStoreVersionExperimentTreatmentsApi {
     const api = new AppStoreVersionExperimentTreatmentsApi(this.basePath)
-    api.setDefaultAuthentication(this.auth)
+    api.setDefaultAuthentication({ auth: this.auth })
     return api
   }
   getAppStoreVersionExperimentsApi(): AppStoreVersionExperimentsApi {
     const api = new AppStoreVersionExperimentsApi(this.basePath)
-    api.setDefaultAuthentication(this.auth)
+    api.setDefaultAuthentication({ auth: this.auth })
     return api
   }
   getAppStoreVersionLocalizationsApi(): AppStoreVersionLocalizationsApi {
     const api = new AppStoreVersionLocalizationsApi(this.basePath)
-    api.setDefaultAuthentication(this.auth)
+    api.setDefaultAuthentication({ auth: this.auth })
     return api
   }
   getAppStoreVersionPhasedReleasesApi(): AppStoreVersionPhasedReleasesApi {
     const api = new AppStoreVersionPhasedReleasesApi(this.basePath)
-    api.setDefaultAuthentication(this.auth)
+    api.setDefaultAuthentication({ auth: this.auth })
     return api
   }
   getAppStoreVersionPromotionsApi(): AppStoreVersionPromotionsApi {
     const api = new AppStoreVersionPromotionsApi(this.basePath)
-    api.setDefaultAuthentication(this.auth)
+    api.setDefaultAuthentication({ auth: this.auth })
     return api
   }
   getAppStoreVersionReleaseRequestsApi(): AppStoreVersionReleaseRequestsApi {
     const api = new AppStoreVersionReleaseRequestsApi(this.basePath)
-    api.setDefaultAuthentication(this.auth)
+    api.setDefaultAuthentication({ auth: this.auth })
     return api
   }
   getAppStoreVersionsApi(): AppStoreVersionsApi {
     const api = new AppStoreVersionsApi(this.basePath)
-    api.setDefaultAuthentication(this.auth)
+    api.setDefaultAuthentication({ auth: this.auth })
     return api
   }
   getAppsApi(): AppsApi {
     const api = new AppsApi(this.basePath)
-    api.setDefaultAuthentication(this.auth)
+    api.setDefaultAuthentication({ auth: this.auth })
     return api
   }
   getBetaAppClipInvocationLocalizationsApi(): BetaAppClipInvocationLocalizationsApi {
     const api = new BetaAppClipInvocationLocalizationsApi(this.basePath)
-    api.setDefaultAuthentication(this.auth)
+    api.setDefaultAuthentication({ auth: this.auth })
     return api
   }
   getBetaAppClipInvocationsApi(): BetaAppClipInvocationsApi {
     const api = new BetaAppClipInvocationsApi(this.basePath)
-    api.setDefaultAuthentication(this.auth)
+    api.setDefaultAuthentication({ auth: this.auth })
     return api
   }
   getBetaAppLocalizationsApi(): BetaAppLocalizationsApi {
     const api = new BetaAppLocalizationsApi(this.basePath)
-    api.setDefaultAuthentication(this.auth)
+    api.setDefaultAuthentication({ auth: this.auth })
     return api
   }
   getBetaAppReviewDetailsApi(): BetaAppReviewDetailsApi {
     const api = new BetaAppReviewDetailsApi(this.basePath)
-    api.setDefaultAuthentication(this.auth)
+    api.setDefaultAuthentication({ auth: this.auth })
     return api
   }
   getBetaAppReviewSubmissionsApi(): BetaAppReviewSubmissionsApi {
     const api = new BetaAppReviewSubmissionsApi(this.basePath)
-    api.setDefaultAuthentication(this.auth)
+    api.setDefaultAuthentication({ auth: this.auth })
     return api
   }
   getBetaBuildLocalizationsApi(): BetaBuildLocalizationsApi {
     const api = new BetaBuildLocalizationsApi(this.basePath)
-    api.setDefaultAuthentication(this.auth)
+    api.setDefaultAuthentication({ auth: this.auth })
     return api
   }
   getBetaGroupsApi(): BetaGroupsApi {
     const api = new BetaGroupsApi(this.basePath)
-    api.setDefaultAuthentication(this.auth)
+    api.setDefaultAuthentication({ auth: this.auth })
     return api
   }
   getBetaLicenseAgreementsApi(): BetaLicenseAgreementsApi {
     const api = new BetaLicenseAgreementsApi(this.basePath)
-    api.setDefaultAuthentication(this.auth)
+    api.setDefaultAuthentication({ auth: this.auth })
     return api
   }
   getBetaTesterInvitationsApi(): BetaTesterInvitationsApi {
     const api = new BetaTesterInvitationsApi(this.basePath)
-    api.setDefaultAuthentication(this.auth)
+    api.setDefaultAuthentication({ auth: this.auth })
     return api
   }
   getBetaTestersApi(): BetaTestersApi {
     const api = new BetaTestersApi(this.basePath)
-    api.setDefaultAuthentication(this.auth)
+    api.setDefaultAuthentication({ auth: this.auth })
     return api
   }
   getBuildBetaDetailsApi(): BuildBetaDetailsApi {
     const api = new BuildBetaDetailsApi(this.basePath)
-    api.setDefaultAuthentication(this.auth)
+    api.setDefaultAuthentication({ auth: this.auth })
     return api
   }
   getBuildBetaNotificationsApi(): BuildBetaNotificationsApi {
     const api = new BuildBetaNotificationsApi(this.basePath)
-    api.setDefaultAuthentication(this.auth)
+    api.setDefaultAuthentication({ auth: this.auth })
     return api
   }
   getBuildBundlesApi(): BuildBundlesApi {
     const api = new BuildBundlesApi(this.basePath)
-    api.setDefaultAuthentication(this.auth)
+    api.setDefaultAuthentication({ auth: this.auth })
     return api
   }
   getBuildsApi(): BuildsApi {
     const api = new BuildsApi(this.basePath)
-    api.setDefaultAuthentication(this.auth)
+    api.setDefaultAuthentication({ auth: this.auth })
     return api
   }
   getBundleIdCapabilitiesApi(): BundleIdCapabilitiesApi {
     const api = new BundleIdCapabilitiesApi(this.basePath)
-    api.setDefaultAuthentication(this.auth)
+    api.setDefaultAuthentication({ auth: this.auth })
     return api
   }
   getBundleIdsApi(): BundleIdsApi {
     const api = new BundleIdsApi(this.basePath)
-    api.setDefaultAuthentication(this.auth)
+    api.setDefaultAuthentication({ auth: this.auth })
     return api
   }
   getCertificatesApi(): CertificatesApi {
     const api = new CertificatesApi(this.basePath)
-    api.setDefaultAuthentication(this.auth)
+    api.setDefaultAuthentication({ auth: this.auth })
     return api
   }
   getCiArtifactsApi(): CiArtifactsApi {
     const api = new CiArtifactsApi(this.basePath)
-    api.setDefaultAuthentication(this.auth)
+    api.setDefaultAuthentication({ auth: this.auth })
     return api
   }
   getCiBuildActionsApi(): CiBuildActionsApi {
     const api = new CiBuildActionsApi(this.basePath)
-    api.setDefaultAuthentication(this.auth)
+    api.setDefaultAuthentication({ auth: this.auth })
     return api
   }
   getCiBuildRunsApi(): CiBuildRunsApi {
     const api = new CiBuildRunsApi(this.basePath)
-    api.setDefaultAuthentication(this.auth)
+    api.setDefaultAuthentication({ auth: this.auth })
     return api
   }
   getCiIssuesApi(): CiIssuesApi {
     const api = new CiIssuesApi(this.basePath)
-    api.setDefaultAuthentication(this.auth)
+    api.setDefaultAuthentication({ auth: this.auth })
     return api
   }
   getCiMacOsVersionsApi(): CiMacOsVersionsApi {
     const api = new CiMacOsVersionsApi(this.basePath)
-    api.setDefaultAuthentication(this.auth)
+    api.setDefaultAuthentication({ auth: this.auth })
     return api
   }
   getCiProductsApi(): CiProductsApi {
     const api = new CiProductsApi(this.basePath)
-    api.setDefaultAuthentication(this.auth)
+    api.setDefaultAuthentication({ auth: this.auth })
     return api
   }
   getCiTestResultsApi(): CiTestResultsApi {
     const api = new CiTestResultsApi(this.basePath)
-    api.setDefaultAuthentication(this.auth)
+    api.setDefaultAuthentication({ auth: this.auth })
     return api
   }
   getCiWorkflowsApi(): CiWorkflowsApi {
     const api = new CiWorkflowsApi(this.basePath)
-    api.setDefaultAuthentication(this.auth)
+    api.setDefaultAuthentication({ auth: this.auth })
     return api
   }
   getCiXcodeVersionsApi(): CiXcodeVersionsApi {
     const api = new CiXcodeVersionsApi(this.basePath)
-    api.setDefaultAuthentication(this.auth)
+    api.setDefaultAuthentication({ auth: this.auth })
     return api
   }
   getCustomerReviewResponsesApi(): CustomerReviewResponsesApi {
     const api = new CustomerReviewResponsesApi(this.basePath)
-    api.setDefaultAuthentication(this.auth)
+    api.setDefaultAuthentication({ auth: this.auth })
     return api
   }
   getCustomerReviewsApi(): CustomerReviewsApi {
     const api = new CustomerReviewsApi(this.basePath)
-    api.setDefaultAuthentication(this.auth)
+    api.setDefaultAuthentication({ auth: this.auth })
     return api
   }
   getDevicesApi(): DevicesApi {
     const api = new DevicesApi(this.basePath)
-    api.setDefaultAuthentication(this.auth)
+    api.setDefaultAuthentication({ auth: this.auth })
     return api
   }
   getDiagnosticSignaturesApi(): DiagnosticSignaturesApi {
     const api = new DiagnosticSignaturesApi(this.basePath)
-    api.setDefaultAuthentication(this.auth)
+    api.setDefaultAuthentication({ auth: this.auth })
     return api
   }
   getEndUserLicenseAgreementsApi(): EndUserLicenseAgreementsApi {
     const api = new EndUserLicenseAgreementsApi(this.basePath)
-    api.setDefaultAuthentication(this.auth)
+    api.setDefaultAuthentication({ auth: this.auth })
     return api
   }
   getFinanceReportsApi(): FinanceReportsApi {
     const api = new FinanceReportsApi(this.basePath)
-    api.setDefaultAuthentication(this.auth)
+    api.setDefaultAuthentication({ auth: this.auth })
     return api
   }
   getGameCenterEnabledVersionsApi(): GameCenterEnabledVersionsApi {
     const api = new GameCenterEnabledVersionsApi(this.basePath)
-    api.setDefaultAuthentication(this.auth)
+    api.setDefaultAuthentication({ auth: this.auth })
     return api
   }
   getInAppPurchaseAppStoreReviewScreenshotsApi(): InAppPurchaseAppStoreReviewScreenshotsApi {
     const api = new InAppPurchaseAppStoreReviewScreenshotsApi(this.basePath)
-    api.setDefaultAuthentication(this.auth)
+    api.setDefaultAuthentication({ auth: this.auth })
     return api
   }
   getInAppPurchaseAvailabilitiesApi(): InAppPurchaseAvailabilitiesApi {
     const api = new InAppPurchaseAvailabilitiesApi(this.basePath)
-    api.setDefaultAuthentication(this.auth)
+    api.setDefaultAuthentication({ auth: this.auth })
     return api
   }
   getInAppPurchaseContentsApi(): InAppPurchaseContentsApi {
     const api = new InAppPurchaseContentsApi(this.basePath)
-    api.setDefaultAuthentication(this.auth)
+    api.setDefaultAuthentication({ auth: this.auth })
     return api
   }
   getInAppPurchaseLocalizationsApi(): InAppPurchaseLocalizationsApi {
     const api = new InAppPurchaseLocalizationsApi(this.basePath)
-    api.setDefaultAuthentication(this.auth)
+    api.setDefaultAuthentication({ auth: this.auth })
     return api
   }
   getInAppPurchasePriceSchedulesApi(): InAppPurchasePriceSchedulesApi {
     const api = new InAppPurchasePriceSchedulesApi(this.basePath)
-    api.setDefaultAuthentication(this.auth)
+    api.setDefaultAuthentication({ auth: this.auth })
     return api
   }
   getInAppPurchaseSubmissionsApi(): InAppPurchaseSubmissionsApi {
     const api = new InAppPurchaseSubmissionsApi(this.basePath)
-    api.setDefaultAuthentication(this.auth)
+    api.setDefaultAuthentication({ auth: this.auth })
     return api
   }
   getInAppPurchasesApi(): InAppPurchasesApi {
     const api = new InAppPurchasesApi(this.basePath)
-    api.setDefaultAuthentication(this.auth)
+    api.setDefaultAuthentication({ auth: this.auth })
     return api
   }
   getPreReleaseVersionsApi(): PreReleaseVersionsApi {
     const api = new PreReleaseVersionsApi(this.basePath)
-    api.setDefaultAuthentication(this.auth)
+    api.setDefaultAuthentication({ auth: this.auth })
     return api
   }
   getProfilesApi(): ProfilesApi {
     const api = new ProfilesApi(this.basePath)
-    api.setDefaultAuthentication(this.auth)
+    api.setDefaultAuthentication({ auth: this.auth })
     return api
   }
   getPromotedPurchaseImagesApi(): PromotedPurchaseImagesApi {
     const api = new PromotedPurchaseImagesApi(this.basePath)
-    api.setDefaultAuthentication(this.auth)
+    api.setDefaultAuthentication({ auth: this.auth })
     return api
   }
   getPromotedPurchasesApi(): PromotedPurchasesApi {
     const api = new PromotedPurchasesApi(this.basePath)
-    api.setDefaultAuthentication(this.auth)
+    api.setDefaultAuthentication({ auth: this.auth })
     return api
   }
   getReviewSubmissionItemsApi(): ReviewSubmissionItemsApi {
     const api = new ReviewSubmissionItemsApi(this.basePath)
-    api.setDefaultAuthentication(this.auth)
+    api.setDefaultAuthentication({ auth: this.auth })
     return api
   }
   getReviewSubmissionsApi(): ReviewSubmissionsApi {
     const api = new ReviewSubmissionsApi(this.basePath)
-    api.setDefaultAuthentication(this.auth)
+    api.setDefaultAuthentication({ auth: this.auth })
     return api
   }
   getRoutingAppCoveragesApi(): RoutingAppCoveragesApi {
     const api = new RoutingAppCoveragesApi(this.basePath)
-    api.setDefaultAuthentication(this.auth)
+    api.setDefaultAuthentication({ auth: this.auth })
     return api
   }
   getSalesReportsApi(): SalesReportsApi {
     const api = new SalesReportsApi(this.basePath)
-    api.setDefaultAuthentication(this.auth)
+    api.setDefaultAuthentication({ auth: this.auth })
     return api
   }
   getSandboxTestersApi(): SandboxTestersApi {
     const api = new SandboxTestersApi(this.basePath)
-    api.setDefaultAuthentication(this.auth)
+    api.setDefaultAuthentication({ auth: this.auth })
     return api
   }
   getSandboxTestersClearPurchaseHistoryRequestApi(): SandboxTestersClearPurchaseHistoryRequestApi {
     const api = new SandboxTestersClearPurchaseHistoryRequestApi(this.basePath)
-    api.setDefaultAuthentication(this.auth)
+    api.setDefaultAuthentication({ auth: this.auth })
     return api
   }
   getScmGitReferencesApi(): ScmGitReferencesApi {
     const api = new ScmGitReferencesApi(this.basePath)
-    api.setDefaultAuthentication(this.auth)
+    api.setDefaultAuthentication({ auth: this.auth })
     return api
   }
   getScmProvidersApi(): ScmProvidersApi {
     const api = new ScmProvidersApi(this.basePath)
-    api.setDefaultAuthentication(this.auth)
+    api.setDefaultAuthentication({ auth: this.auth })
     return api
   }
   getScmPullRequestsApi(): ScmPullRequestsApi {
     const api = new ScmPullRequestsApi(this.basePath)
-    api.setDefaultAuthentication(this.auth)
+    api.setDefaultAuthentication({ auth: this.auth })
     return api
   }
   getScmRepositoriesApi(): ScmRepositoriesApi {
     const api = new ScmRepositoriesApi(this.basePath)
-    api.setDefaultAuthentication(this.auth)
+    api.setDefaultAuthentication({ auth: this.auth })
     return api
   }
   getSubscriptionAppStoreReviewScreenshotsApi(): SubscriptionAppStoreReviewScreenshotsApi {
     const api = new SubscriptionAppStoreReviewScreenshotsApi(this.basePath)
-    api.setDefaultAuthentication(this.auth)
+    api.setDefaultAuthentication({ auth: this.auth })
     return api
   }
   getSubscriptionAvailabilitiesApi(): SubscriptionAvailabilitiesApi {
     const api = new SubscriptionAvailabilitiesApi(this.basePath)
-    api.setDefaultAuthentication(this.auth)
+    api.setDefaultAuthentication({ auth: this.auth })
     return api
   }
   getSubscriptionGracePeriodsApi(): SubscriptionGracePeriodsApi {
     const api = new SubscriptionGracePeriodsApi(this.basePath)
-    api.setDefaultAuthentication(this.auth)
+    api.setDefaultAuthentication({ auth: this.auth })
     return api
   }
   getSubscriptionGroupLocalizationsApi(): SubscriptionGroupLocalizationsApi {
     const api = new SubscriptionGroupLocalizationsApi(this.basePath)
-    api.setDefaultAuthentication(this.auth)
+    api.setDefaultAuthentication({ auth: this.auth })
     return api
   }
   getSubscriptionGroupSubmissionsApi(): SubscriptionGroupSubmissionsApi {
     const api = new SubscriptionGroupSubmissionsApi(this.basePath)
-    api.setDefaultAuthentication(this.auth)
+    api.setDefaultAuthentication({ auth: this.auth })
     return api
   }
   getSubscriptionGroupsApi(): SubscriptionGroupsApi {
     const api = new SubscriptionGroupsApi(this.basePath)
-    api.setDefaultAuthentication(this.auth)
+    api.setDefaultAuthentication({ auth: this.auth })
     return api
   }
   getSubscriptionIntroductoryOffersApi(): SubscriptionIntroductoryOffersApi {
     const api = new SubscriptionIntroductoryOffersApi(this.basePath)
-    api.setDefaultAuthentication(this.auth)
+    api.setDefaultAuthentication({ auth: this.auth })
     return api
   }
   getSubscriptionLocalizationsApi(): SubscriptionLocalizationsApi {
     const api = new SubscriptionLocalizationsApi(this.basePath)
-    api.setDefaultAuthentication(this.auth)
+    api.setDefaultAuthentication({ auth: this.auth })
     return api
   }
   getSubscriptionOfferCodeCustomCodesApi(): SubscriptionOfferCodeCustomCodesApi {
     const api = new SubscriptionOfferCodeCustomCodesApi(this.basePath)
-    api.setDefaultAuthentication(this.auth)
+    api.setDefaultAuthentication({ auth: this.auth })
     return api
   }
   getSubscriptionOfferCodeOneTimeUseCodesApi(): SubscriptionOfferCodeOneTimeUseCodesApi {
     const api = new SubscriptionOfferCodeOneTimeUseCodesApi(this.basePath)
-    api.setDefaultAuthentication(this.auth)
+    api.setDefaultAuthentication({ auth: this.auth })
     return api
   }
   getSubscriptionOfferCodesApi(): SubscriptionOfferCodesApi {
     const api = new SubscriptionOfferCodesApi(this.basePath)
-    api.setDefaultAuthentication(this.auth)
+    api.setDefaultAuthentication({ auth: this.auth })
     return api
   }
   getSubscriptionPricePointsApi(): SubscriptionPricePointsApi {
     const api = new SubscriptionPricePointsApi(this.basePath)
-    api.setDefaultAuthentication(this.auth)
+    api.setDefaultAuthentication({ auth: this.auth })
     return api
   }
   getSubscriptionPricesApi(): SubscriptionPricesApi {
     const api = new SubscriptionPricesApi(this.basePath)
-    api.setDefaultAuthentication(this.auth)
+    api.setDefaultAuthentication({ auth: this.auth })
     return api
   }
   getSubscriptionPromotionalOffersApi(): SubscriptionPromotionalOffersApi {
     const api = new SubscriptionPromotionalOffersApi(this.basePath)
-    api.setDefaultAuthentication(this.auth)
+    api.setDefaultAuthentication({ auth: this.auth })
     return api
   }
   getSubscriptionSubmissionsApi(): SubscriptionSubmissionsApi {
     const api = new SubscriptionSubmissionsApi(this.basePath)
-    api.setDefaultAuthentication(this.auth)
+    api.setDefaultAuthentication({ auth: this.auth })
     return api
   }
   getSubscriptionsApi(): SubscriptionsApi {
     const api = new SubscriptionsApi(this.basePath)
-    api.setDefaultAuthentication(this.auth)
+    api.setDefaultAuthentication({ auth: this.auth })
     return api
   }
   getTerritoriesApi(): TerritoriesApi {
     const api = new TerritoriesApi(this.basePath)
-    api.setDefaultAuthentication(this.auth)
+    api.setDefaultAuthentication({ auth: this.auth })
     return api
   }
   getUserInvitationsApi(): UserInvitationsApi {
     const api = new UserInvitationsApi(this.basePath)
-    api.setDefaultAuthentication(this.auth)
+    api.setDefaultAuthentication({ auth: this.auth })
     return api
   }
   getUsersApi(): UsersApi {
     const api = new UsersApi(this.basePath)
-    api.setDefaultAuthentication(this.auth)
+    api.setDefaultAuthentication({ auth: this.auth })
     return api
   }
 }

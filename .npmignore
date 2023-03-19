@@ -1,2 +1,5 @@
 openapi.json
 openapitools.json
+converter/
+fetch/
+src/

@@ -3,3 +3,4 @@ openapitools.json
 converter/
 fetch/
 src/
+src/index.ts

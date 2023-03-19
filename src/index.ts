@@ -1,1 +1,0 @@
-export { AppStoreConnectClient } from "./client"

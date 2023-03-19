@@ -2,11 +2,11 @@
   "$schema": "./node_modules/@openapitools/openapi-generator-cli/config.schema.json",
   "spaces": 2,
   "generator-cli": {
-    "version": "6.4.0",
+    "version": "6.3.0",
     "generators": {
       "v3.0.1": {
-        "generatorName": "typescript-node",
-        "output": "src",
+        "generatorName": "typescript-fetch",
+        "output": "fetch",
         "glob": "openapi.json",
         "additionalProperties": {
           "modelPropertyNaming": "camelCase",

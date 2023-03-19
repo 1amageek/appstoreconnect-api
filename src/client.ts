@@ -1,118 +1,117 @@
-import * as jwt from "jsonwebtoken"
-import { SignOptions } from "jsonwebtoken"
-import { HttpBearerAuth } from "./api"
-import { AgeRatingDeclarationsApi } from './api';
-import { AppAvailabilitiesApi } from './api';
-import { AppCategoriesApi } from './api';
-import { AppClipAdvancedExperienceImagesApi } from './api';
-import { AppClipAdvancedExperiencesApi } from './api';
-import { AppClipAppStoreReviewDetailsApi } from './api';
-import { AppClipDefaultExperienceLocalizationsApi } from './api';
-import { AppClipDefaultExperiencesApi } from './api';
-import { AppClipHeaderImagesApi } from './api';
-import { AppClipsApi } from './api';
-import { AppCustomProductPageLocalizationsApi } from './api';
-import { AppCustomProductPageVersionsApi } from './api';
-import { AppCustomProductPagesApi } from './api';
-import { AppEncryptionDeclarationDocumentsApi } from './api';
-import { AppEncryptionDeclarationsApi } from './api';
-import { AppEventLocalizationsApi } from './api';
-import { AppEventScreenshotsApi } from './api';
-import { AppEventVideoClipsApi } from './api';
-import { AppEventsApi } from './api';
-import { AppInfoLocalizationsApi } from './api';
-import { AppInfosApi } from './api';
-import { AppPreOrdersApi } from './api';
-import { AppPreviewSetsApi } from './api';
-import { AppPreviewsApi } from './api';
-import { AppPricePointsApi } from './api';
-import { AppPriceSchedulesApi } from './api';
-import { AppScreenshotSetsApi } from './api';
-import { AppScreenshotsApi } from './api';
-import { AppStoreReviewAttachmentsApi } from './api';
-import { AppStoreReviewDetailsApi } from './api';
-import { AppStoreVersionExperimentTreatmentLocalizationsApi } from './api';
-import { AppStoreVersionExperimentTreatmentsApi } from './api';
-import { AppStoreVersionExperimentsApi } from './api';
-import { AppStoreVersionLocalizationsApi } from './api';
-import { AppStoreVersionPhasedReleasesApi } from './api';
-import { AppStoreVersionPromotionsApi } from './api';
-import { AppStoreVersionReleaseRequestsApi } from './api';
-import { AppStoreVersionsApi } from './api';
-import { AppsApi } from './api';
-import { BetaAppClipInvocationLocalizationsApi } from './api';
-import { BetaAppClipInvocationsApi } from './api';
-import { BetaAppLocalizationsApi } from './api';
-import { BetaAppReviewDetailsApi } from './api';
-import { BetaAppReviewSubmissionsApi } from './api';
-import { BetaBuildLocalizationsApi } from './api';
-import { BetaGroupsApi } from './api';
-import { BetaLicenseAgreementsApi } from './api';
-import { BetaTesterInvitationsApi } from './api';
-import { BetaTestersApi } from './api';
-import { BuildBetaDetailsApi } from './api';
-import { BuildBetaNotificationsApi } from './api';
-import { BuildBundlesApi } from './api';
-import { BuildsApi } from './api';
-import { BundleIdCapabilitiesApi } from './api';
-import { BundleIdsApi } from './api';
-import { CertificatesApi } from './api';
-import { CiArtifactsApi } from './api';
-import { CiBuildActionsApi } from './api';
-import { CiBuildRunsApi } from './api';
-import { CiIssuesApi } from './api';
-import { CiMacOsVersionsApi } from './api';
-import { CiProductsApi } from './api';
-import { CiTestResultsApi } from './api';
-import { CiWorkflowsApi } from './api';
-import { CiXcodeVersionsApi } from './api';
-import { CustomerReviewResponsesApi } from './api';
-import { CustomerReviewsApi } from './api';
-import { DevicesApi } from './api';
-import { DiagnosticSignaturesApi } from './api';
-import { EndUserLicenseAgreementsApi } from './api';
-import { FinanceReportsApi } from './api';
-import { GameCenterEnabledVersionsApi } from './api';
-import { InAppPurchaseAppStoreReviewScreenshotsApi } from './api';
-import { InAppPurchaseAvailabilitiesApi } from './api';
-import { InAppPurchaseContentsApi } from './api';
-import { InAppPurchaseLocalizationsApi } from './api';
-import { InAppPurchasePriceSchedulesApi } from './api';
-import { InAppPurchaseSubmissionsApi } from './api';
-import { InAppPurchasesApi } from './api';
-import { PreReleaseVersionsApi } from './api';
-import { ProfilesApi } from './api';
-import { PromotedPurchaseImagesApi } from './api';
-import { PromotedPurchasesApi } from './api';
-import { ReviewSubmissionItemsApi } from './api';
-import { ReviewSubmissionsApi } from './api';
-import { RoutingAppCoveragesApi } from './api';
-import { SalesReportsApi } from './api';
-import { SandboxTestersApi } from './api';
-import { SandboxTestersClearPurchaseHistoryRequestApi } from './api';
-import { ScmGitReferencesApi } from './api';
-import { ScmProvidersApi } from './api';
-import { ScmPullRequestsApi } from './api';
-import { ScmRepositoriesApi } from './api';
-import { SubscriptionAppStoreReviewScreenshotsApi } from './api';
-import { SubscriptionAvailabilitiesApi } from './api';
-import { SubscriptionGracePeriodsApi } from './api';
-import { SubscriptionGroupLocalizationsApi } from './api';
-import { SubscriptionGroupSubmissionsApi } from './api';
-import { SubscriptionGroupsApi } from './api';
-import { SubscriptionIntroductoryOffersApi } from './api';
-import { SubscriptionLocalizationsApi } from './api';
-import { SubscriptionOfferCodeCustomCodesApi } from './api';
-import { SubscriptionOfferCodeOneTimeUseCodesApi } from './api';
-import { SubscriptionOfferCodesApi } from './api';
-import { SubscriptionPricePointsApi } from './api';
-import { SubscriptionPricesApi } from './api';
-import { SubscriptionPromotionalOffersApi } from './api';
-import { SubscriptionSubmissionsApi } from './api';
-import { SubscriptionsApi } from './api';
-import { TerritoriesApi } from './api';
-import { UserInvitationsApi } from './api';
-import { UsersApi } from './api';
+import { SignOptions, sign } from "jsonwebtoken"
+import { Configuration } from "./appstoreconnect";
+import { AgeRatingDeclarationsApi } from './appstoreconnect';
+import { AppAvailabilitiesApi } from "./appstoreconnect";
+import { AppCategoriesApi } from "./appstoreconnect";
+import { AppClipAdvancedExperienceImagesApi } from "./appstoreconnect";
+import { AppClipAdvancedExperiencesApi } from "./appstoreconnect";
+import { AppClipAppStoreReviewDetailsApi } from "./appstoreconnect";
+import { AppClipDefaultExperienceLocalizationsApi } from "./appstoreconnect";
+import { AppClipDefaultExperiencesApi } from "./appstoreconnect";
+import { AppClipHeaderImagesApi } from "./appstoreconnect";
+import { AppClipsApi } from "./appstoreconnect";
+import { AppCustomProductPageLocalizationsApi } from "./appstoreconnect";
+import { AppCustomProductPageVersionsApi } from "./appstoreconnect";
+import { AppCustomProductPagesApi } from "./appstoreconnect";
+import { AppEncryptionDeclarationDocumentsApi } from "./appstoreconnect";
+import { AppEncryptionDeclarationsApi } from "./appstoreconnect";
+import { AppEventLocalizationsApi } from "./appstoreconnect";
+import { AppEventScreenshotsApi } from "./appstoreconnect";
+import { AppEventVideoClipsApi } from "./appstoreconnect";
+import { AppEventsApi } from "./appstoreconnect";
+import { AppInfoLocalizationsApi } from "./appstoreconnect";
+import { AppInfosApi } from "./appstoreconnect";
+import { AppPreOrdersApi } from "./appstoreconnect";
+import { AppPreviewSetsApi } from "./appstoreconnect";
+import { AppPreviewsApi } from "./appstoreconnect";
+import { AppPricePointsApi } from "./appstoreconnect";
+import { AppPriceSchedulesApi } from "./appstoreconnect";
+import { AppScreenshotSetsApi } from "./appstoreconnect";
+import { AppScreenshotsApi } from "./appstoreconnect";
+import { AppStoreReviewAttachmentsApi } from "./appstoreconnect";
+import { AppStoreReviewDetailsApi } from "./appstoreconnect";
+import { AppStoreVersionExperimentTreatmentLocalizationsApi } from "./appstoreconnect";
+import { AppStoreVersionExperimentTreatmentsApi } from "./appstoreconnect";
+import { AppStoreVersionExperimentsApi } from "./appstoreconnect";
+import { AppStoreVersionLocalizationsApi } from "./appstoreconnect";
+import { AppStoreVersionPhasedReleasesApi } from "./appstoreconnect";
+import { AppStoreVersionPromotionsApi } from "./appstoreconnect";
+import { AppStoreVersionReleaseRequestsApi } from "./appstoreconnect";
+import { AppStoreVersionsApi } from "./appstoreconnect";
+import { AppsApi } from "./appstoreconnect";
+import { BetaAppClipInvocationLocalizationsApi } from "./appstoreconnect";
+import { BetaAppClipInvocationsApi } from "./appstoreconnect";
+import { BetaAppLocalizationsApi } from "./appstoreconnect";
+import { BetaAppReviewDetailsApi } from "./appstoreconnect";
+import { BetaAppReviewSubmissionsApi } from "./appstoreconnect";
+import { BetaBuildLocalizationsApi } from "./appstoreconnect";
+import { BetaGroupsApi } from "./appstoreconnect";
+import { BetaLicenseAgreementsApi } from "./appstoreconnect";
+import { BetaTesterInvitationsApi } from "./appstoreconnect";
+import { BetaTestersApi } from "./appstoreconnect";
+import { BuildBetaDetailsApi } from "./appstoreconnect";
+import { BuildBetaNotificationsApi } from "./appstoreconnect";
+import { BuildBundlesApi } from "./appstoreconnect";
+import { BuildsApi } from "./appstoreconnect";
+import { BundleIdCapabilitiesApi } from "./appstoreconnect";
+import { BundleIdsApi } from "./appstoreconnect";
+import { CertificatesApi } from "./appstoreconnect";
+import { CiArtifactsApi } from "./appstoreconnect";
+import { CiBuildActionsApi } from "./appstoreconnect";
+import { CiBuildRunsApi } from "./appstoreconnect";
+import { CiIssuesApi } from "./appstoreconnect";
+import { CiMacOsVersionsApi } from "./appstoreconnect";
+import { CiProductsApi } from "./appstoreconnect";
+import { CiTestResultsApi } from "./appstoreconnect";
+import { CiWorkflowsApi } from "./appstoreconnect";
+import { CiXcodeVersionsApi } from "./appstoreconnect";
+import { CustomerReviewResponsesApi } from "./appstoreconnect";
+import { CustomerReviewsApi } from "./appstoreconnect";
+import { DevicesApi } from "./appstoreconnect";
+import { DiagnosticSignaturesApi } from "./appstoreconnect";
+import { EndUserLicenseAgreementsApi } from "./appstoreconnect";
+import { FinanceReportsApi } from "./appstoreconnect";
+import { GameCenterEnabledVersionsApi } from "./appstoreconnect";
+import { InAppPurchaseAppStoreReviewScreenshotsApi } from "./appstoreconnect";
+import { InAppPurchaseAvailabilitiesApi } from "./appstoreconnect";
+import { InAppPurchaseContentsApi } from "./appstoreconnect";
+import { InAppPurchaseLocalizationsApi } from "./appstoreconnect";
+import { InAppPurchasePriceSchedulesApi } from "./appstoreconnect";
+import { InAppPurchaseSubmissionsApi } from "./appstoreconnect";
+import { InAppPurchasesApi } from "./appstoreconnect";
+import { PreReleaseVersionsApi } from "./appstoreconnect";
+import { ProfilesApi } from "./appstoreconnect";
+import { PromotedPurchaseImagesApi } from "./appstoreconnect";
+import { PromotedPurchasesApi } from "./appstoreconnect";
+import { ReviewSubmissionItemsApi } from "./appstoreconnect";
+import { ReviewSubmissionsApi } from "./appstoreconnect";
+import { RoutingAppCoveragesApi } from "./appstoreconnect";
+import { SalesReportsApi } from "./appstoreconnect";
+import { SandboxTestersApi } from "./appstoreconnect";
+import { SandboxTestersClearPurchaseHistoryRequestApi } from "./appstoreconnect";
+import { ScmGitReferencesApi } from "./appstoreconnect";
+import { ScmProvidersApi } from "./appstoreconnect";
+import { ScmPullRequestsApi } from "./appstoreconnect";
+import { ScmRepositoriesApi } from "./appstoreconnect";
+import { SubscriptionAppStoreReviewScreenshotsApi } from "./appstoreconnect";
+import { SubscriptionAvailabilitiesApi } from "./appstoreconnect";
+import { SubscriptionGracePeriodsApi } from "./appstoreconnect";
+import { SubscriptionGroupLocalizationsApi } from "./appstoreconnect";
+import { SubscriptionGroupSubmissionsApi } from "./appstoreconnect";
+import { SubscriptionGroupsApi } from "./appstoreconnect";
+import { SubscriptionIntroductoryOffersApi } from "./appstoreconnect";
+import { SubscriptionLocalizationsApi } from "./appstoreconnect";
+import { SubscriptionOfferCodeCustomCodesApi } from "./appstoreconnect";
+import { SubscriptionOfferCodeOneTimeUseCodesApi } from "./appstoreconnect";
+import { SubscriptionOfferCodesApi } from "./appstoreconnect";
+import { SubscriptionPricePointsApi } from "./appstoreconnect";
+import { SubscriptionPricesApi } from "./appstoreconnect";
+import { SubscriptionPromotionalOffersApi } from "./appstoreconnect";
+import { SubscriptionSubmissionsApi } from "./appstoreconnect";
+import { SubscriptionsApi } from "./appstoreconnect";
+import { TerritoriesApi } from "./appstoreconnect";
+import { UserInvitationsApi } from "./appstoreconnect";
+import { UsersApi } from "./appstoreconnect";
 
 interface AppStoreConnectClientOptions {
   issuerId?: string;
@@ -125,28 +124,32 @@ interface AppStoreConnectClientOptions {
 export class AppStoreConnectClient {
   private options: AppStoreConnectClientOptions
   private basePath?: string
-  private auth: HttpBearerAuth
-
+  private bearerTokenGeneratedAt: number
   constructor(options: AppStoreConnectClientOptions, basePath?: string) {
     this.options = options;
     this.basePath = basePath
-    this.auth = new HttpBearerAuth()
-    this.updateBearerToken(options)
+    this.bearerTokenGeneratedAt = 0
   }
 
-  updateBearerToken(options: AppStoreConnectClientOptions) {
-    const token = this.createBearerToken(options);
-    this.auth.accessToken = token;
+  getConfiguration(options: AppStoreConnectClientOptions) {
+    const expirationTime = options.expirationTime ?? 600
+    const hasExpired = this.bearerTokenGeneratedAt && (Date.now() - this.bearerTokenGeneratedAt) > (1000 * expirationTime);
+    if (hasExpired) {
+      options.bearerToken = undefined
+    }
+    const accessToken = this.createBearerToken(options);
+    return new Configuration({ accessToken })
   }
 
   createBearerToken(options: AppStoreConnectClientOptions): string {
     if (options.bearerToken) {
       return options.bearerToken;
     }
+    const now = Date.now()
     const expirationTime = options.expirationTime || 600;
     const payload = {
       iss: options.issuerId,
-      exp: Math.floor(Date.now() / 1000) + expirationTime,
+      exp: Math.floor(now / 1000) + expirationTime,
     };
     const signOptions: SignOptions = {
       algorithm: "ES256",
@@ -160,567 +163,456 @@ export class AppStoreConnectClient {
         typ: "JWT",
       },
     };
-    return jwt.sign(payload, options.privateKey as string, signOptions);
+    this.bearerTokenGeneratedAt = now
+    return sign(payload, options.privateKey!, signOptions);
   }
 
   getAgeRatingDeclarationsApi(): AgeRatingDeclarationsApi {
-    const api = new AgeRatingDeclarationsApi(this.basePath)
-    api.setDefaultAuthentication({ auth: this.auth })
+    const api = new AgeRatingDeclarationsApi(this.getConfiguration(this.options))
     return api
   }
   getAppAvailabilitiesApi(): AppAvailabilitiesApi {
-    const api = new AppAvailabilitiesApi(this.basePath)
-    api.setDefaultAuthentication({ auth: this.auth })
+    const api = new AppAvailabilitiesApi(this.getConfiguration(this.options))
     return api
   }
   getAppCategoriesApi(): AppCategoriesApi {
-    const api = new AppCategoriesApi(this.basePath)
-    api.setDefaultAuthentication({ auth: this.auth })
+    const api = new AppCategoriesApi(this.getConfiguration(this.options))
     return api
   }
   getAppClipAdvancedExperienceImagesApi(): AppClipAdvancedExperienceImagesApi {
-    const api = new AppClipAdvancedExperienceImagesApi(this.basePath)
-    api.setDefaultAuthentication({ auth: this.auth })
+    const api = new AppClipAdvancedExperienceImagesApi(this.getConfiguration(this.options))
     return api
   }
   getAppClipAdvancedExperiencesApi(): AppClipAdvancedExperiencesApi {
-    const api = new AppClipAdvancedExperiencesApi(this.basePath)
-    api.setDefaultAuthentication({ auth: this.auth })
+    const api = new AppClipAdvancedExperiencesApi(this.getConfiguration(this.options))
     return api
   }
   getAppClipAppStoreReviewDetailsApi(): AppClipAppStoreReviewDetailsApi {
-    const api = new AppClipAppStoreReviewDetailsApi(this.basePath)
-    api.setDefaultAuthentication({ auth: this.auth })
+    const api = new AppClipAppStoreReviewDetailsApi(this.getConfiguration(this.options))
     return api
   }
   getAppClipDefaultExperienceLocalizationsApi(): AppClipDefaultExperienceLocalizationsApi {
-    const api = new AppClipDefaultExperienceLocalizationsApi(this.basePath)
-    api.setDefaultAuthentication({ auth: this.auth })
+    const api = new AppClipDefaultExperienceLocalizationsApi(this.getConfiguration(this.options))
     return api
   }
   getAppClipDefaultExperiencesApi(): AppClipDefaultExperiencesApi {
-    const api = new AppClipDefaultExperiencesApi(this.basePath)
-    api.setDefaultAuthentication({ auth: this.auth })
+    const api = new AppClipDefaultExperiencesApi(this.getConfiguration(this.options))
     return api
   }
   getAppClipHeaderImagesApi(): AppClipHeaderImagesApi {
-    const api = new AppClipHeaderImagesApi(this.basePath)
-    api.setDefaultAuthentication({ auth: this.auth })
+    const api = new AppClipHeaderImagesApi(this.getConfiguration(this.options))
     return api
   }
   getAppClipsApi(): AppClipsApi {
-    const api = new AppClipsApi(this.basePath)
-    api.setDefaultAuthentication({ auth: this.auth })
+    const api = new AppClipsApi(this.getConfiguration(this.options))
     return api
   }
   getAppCustomProductPageLocalizationsApi(): AppCustomProductPageLocalizationsApi {
-    const api = new AppCustomProductPageLocalizationsApi(this.basePath)
-    api.setDefaultAuthentication({ auth: this.auth })
+    const api = new AppCustomProductPageLocalizationsApi(this.getConfiguration(this.options))
     return api
   }
   getAppCustomProductPageVersionsApi(): AppCustomProductPageVersionsApi {
-    const api = new AppCustomProductPageVersionsApi(this.basePath)
-    api.setDefaultAuthentication({ auth: this.auth })
+    const api = new AppCustomProductPageVersionsApi(this.getConfiguration(this.options))
     return api
   }
   getAppCustomProductPagesApi(): AppCustomProductPagesApi {
-    const api = new AppCustomProductPagesApi(this.basePath)
-    api.setDefaultAuthentication({ auth: this.auth })
+    const api = new AppCustomProductPagesApi(this.getConfiguration(this.options))
     return api
   }
   getAppEncryptionDeclarationDocumentsApi(): AppEncryptionDeclarationDocumentsApi {
-    const api = new AppEncryptionDeclarationDocumentsApi(this.basePath)
-    api.setDefaultAuthentication({ auth: this.auth })
+    const api = new AppEncryptionDeclarationDocumentsApi(this.getConfiguration(this.options))
     return api
   }
   getAppEncryptionDeclarationsApi(): AppEncryptionDeclarationsApi {
-    const api = new AppEncryptionDeclarationsApi(this.basePath)
-    api.setDefaultAuthentication({ auth: this.auth })
+    const api = new AppEncryptionDeclarationsApi(this.getConfiguration(this.options))
     return api
   }
   getAppEventLocalizationsApi(): AppEventLocalizationsApi {
-    const api = new AppEventLocalizationsApi(this.basePath)
-    api.setDefaultAuthentication({ auth: this.auth })
+    const api = new AppEventLocalizationsApi(this.getConfiguration(this.options))
     return api
   }
   getAppEventScreenshotsApi(): AppEventScreenshotsApi {
-    const api = new AppEventScreenshotsApi(this.basePath)
-    api.setDefaultAuthentication({ auth: this.auth })
+    const api = new AppEventScreenshotsApi(this.getConfiguration(this.options))
     return api
   }
   getAppEventVideoClipsApi(): AppEventVideoClipsApi {
-    const api = new AppEventVideoClipsApi(this.basePath)
-    api.setDefaultAuthentication({ auth: this.auth })
+    const api = new AppEventVideoClipsApi(this.getConfiguration(this.options))
     return api
   }
   getAppEventsApi(): AppEventsApi {
-    const api = new AppEventsApi(this.basePath)
-    api.setDefaultAuthentication({ auth: this.auth })
+    const api = new AppEventsApi(this.getConfiguration(this.options))
     return api
   }
   getAppInfoLocalizationsApi(): AppInfoLocalizationsApi {
-    const api = new AppInfoLocalizationsApi(this.basePath)
-    api.setDefaultAuthentication({ auth: this.auth })
+    const api = new AppInfoLocalizationsApi(this.getConfiguration(this.options))
     return api
   }
   getAppInfosApi(): AppInfosApi {
-    const api = new AppInfosApi(this.basePath)
-    api.setDefaultAuthentication({ auth: this.auth })
+    const api = new AppInfosApi(this.getConfiguration(this.options))
     return api
   }
   getAppPreOrdersApi(): AppPreOrdersApi {
-    const api = new AppPreOrdersApi(this.basePath)
-    api.setDefaultAuthentication({ auth: this.auth })
+    const api = new AppPreOrdersApi(this.getConfiguration(this.options))
     return api
   }
   getAppPreviewSetsApi(): AppPreviewSetsApi {
-    const api = new AppPreviewSetsApi(this.basePath)
-    api.setDefaultAuthentication({ auth: this.auth })
+    const api = new AppPreviewSetsApi(this.getConfiguration(this.options))
     return api
   }
   getAppPreviewsApi(): AppPreviewsApi {
-    const api = new AppPreviewsApi(this.basePath)
-    api.setDefaultAuthentication({ auth: this.auth })
+    const api = new AppPreviewsApi(this.getConfiguration(this.options))
     return api
   }
   getAppPricePointsApi(): AppPricePointsApi {
-    const api = new AppPricePointsApi(this.basePath)
-    api.setDefaultAuthentication({ auth: this.auth })
+    const api = new AppPricePointsApi(this.getConfiguration(this.options))
     return api
   }
   getAppPriceSchedulesApi(): AppPriceSchedulesApi {
-    const api = new AppPriceSchedulesApi(this.basePath)
-    api.setDefaultAuthentication({ auth: this.auth })
+    const api = new AppPriceSchedulesApi(this.getConfiguration(this.options))
     return api
   }
   getAppScreenshotSetsApi(): AppScreenshotSetsApi {
-    const api = new AppScreenshotSetsApi(this.basePath)
-    api.setDefaultAuthentication({ auth: this.auth })
+    const api = new AppScreenshotSetsApi(this.getConfiguration(this.options))
     return api
   }
   getAppScreenshotsApi(): AppScreenshotsApi {
-    const api = new AppScreenshotsApi(this.basePath)
-    api.setDefaultAuthentication({ auth: this.auth })
+    const api = new AppScreenshotsApi(this.getConfiguration(this.options))
     return api
   }
   getAppStoreReviewAttachmentsApi(): AppStoreReviewAttachmentsApi {
-    const api = new AppStoreReviewAttachmentsApi(this.basePath)
-    api.setDefaultAuthentication({ auth: this.auth })
+    const api = new AppStoreReviewAttachmentsApi(this.getConfiguration(this.options))
     return api
   }
   getAppStoreReviewDetailsApi(): AppStoreReviewDetailsApi {
-    const api = new AppStoreReviewDetailsApi(this.basePath)
-    api.setDefaultAuthentication({ auth: this.auth })
+    const api = new AppStoreReviewDetailsApi(this.getConfiguration(this.options))
     return api
   }
   getAppStoreVersionExperimentTreatmentLocalizationsApi(): AppStoreVersionExperimentTreatmentLocalizationsApi {
-    const api = new AppStoreVersionExperimentTreatmentLocalizationsApi(this.basePath)
-    api.setDefaultAuthentication({ auth: this.auth })
+    const api = new AppStoreVersionExperimentTreatmentLocalizationsApi(this.getConfiguration(this.options))
     return api
   }
   getAppStoreVersionExperimentTreatmentsApi(): AppStoreVersionExperimentTreatmentsApi {
-    const api = new AppStoreVersionExperimentTreatmentsApi(this.basePath)
-    api.setDefaultAuthentication({ auth: this.auth })
+    const api = new AppStoreVersionExperimentTreatmentsApi(this.getConfiguration(this.options))
     return api
   }
   getAppStoreVersionExperimentsApi(): AppStoreVersionExperimentsApi {
-    const api = new AppStoreVersionExperimentsApi(this.basePath)
-    api.setDefaultAuthentication({ auth: this.auth })
+    const api = new AppStoreVersionExperimentsApi(this.getConfiguration(this.options))
     return api
   }
   getAppStoreVersionLocalizationsApi(): AppStoreVersionLocalizationsApi {
-    const api = new AppStoreVersionLocalizationsApi(this.basePath)
-    api.setDefaultAuthentication({ auth: this.auth })
+    const api = new AppStoreVersionLocalizationsApi(this.getConfiguration(this.options))
     return api
   }
   getAppStoreVersionPhasedReleasesApi(): AppStoreVersionPhasedReleasesApi {
-    const api = new AppStoreVersionPhasedReleasesApi(this.basePath)
-    api.setDefaultAuthentication({ auth: this.auth })
+    const api = new AppStoreVersionPhasedReleasesApi(this.getConfiguration(this.options))
     return api
   }
   getAppStoreVersionPromotionsApi(): AppStoreVersionPromotionsApi {
-    const api = new AppStoreVersionPromotionsApi(this.basePath)
-    api.setDefaultAuthentication({ auth: this.auth })
+    const api = new AppStoreVersionPromotionsApi(this.getConfiguration(this.options))
     return api
   }
   getAppStoreVersionReleaseRequestsApi(): AppStoreVersionReleaseRequestsApi {
-    const api = new AppStoreVersionReleaseRequestsApi(this.basePath)
-    api.setDefaultAuthentication({ auth: this.auth })
+    const api = new AppStoreVersionReleaseRequestsApi(this.getConfiguration(this.options))
     return api
   }
   getAppStoreVersionsApi(): AppStoreVersionsApi {
-    const api = new AppStoreVersionsApi(this.basePath)
-    api.setDefaultAuthentication({ auth: this.auth })
+    const api = new AppStoreVersionsApi(this.getConfiguration(this.options))
     return api
   }
   getAppsApi(): AppsApi {
-    const api = new AppsApi(this.basePath)
-    api.setDefaultAuthentication({ auth: this.auth })
+    const api = new AppsApi(this.getConfiguration(this.options))
     return api
   }
   getBetaAppClipInvocationLocalizationsApi(): BetaAppClipInvocationLocalizationsApi {
-    const api = new BetaAppClipInvocationLocalizationsApi(this.basePath)
-    api.setDefaultAuthentication({ auth: this.auth })
+    const api = new BetaAppClipInvocationLocalizationsApi(this.getConfiguration(this.options))
     return api
   }
   getBetaAppClipInvocationsApi(): BetaAppClipInvocationsApi {
-    const api = new BetaAppClipInvocationsApi(this.basePath)
-    api.setDefaultAuthentication({ auth: this.auth })
+    const api = new BetaAppClipInvocationsApi(this.getConfiguration(this.options))
     return api
   }
   getBetaAppLocalizationsApi(): BetaAppLocalizationsApi {
-    const api = new BetaAppLocalizationsApi(this.basePath)
-    api.setDefaultAuthentication({ auth: this.auth })
+    const api = new BetaAppLocalizationsApi(this.getConfiguration(this.options))
     return api
   }
   getBetaAppReviewDetailsApi(): BetaAppReviewDetailsApi {
-    const api = new BetaAppReviewDetailsApi(this.basePath)
-    api.setDefaultAuthentication({ auth: this.auth })
+    const api = new BetaAppReviewDetailsApi(this.getConfiguration(this.options))
     return api
   }
   getBetaAppReviewSubmissionsApi(): BetaAppReviewSubmissionsApi {
-    const api = new BetaAppReviewSubmissionsApi(this.basePath)
-    api.setDefaultAuthentication({ auth: this.auth })
+    const api = new BetaAppReviewSubmissionsApi(this.getConfiguration(this.options))
     return api
   }
   getBetaBuildLocalizationsApi(): BetaBuildLocalizationsApi {
-    const api = new BetaBuildLocalizationsApi(this.basePath)
-    api.setDefaultAuthentication({ auth: this.auth })
+    const api = new BetaBuildLocalizationsApi(this.getConfiguration(this.options))
     return api
   }
   getBetaGroupsApi(): BetaGroupsApi {
-    const api = new BetaGroupsApi(this.basePath)
-    api.setDefaultAuthentication({ auth: this.auth })
+    const api = new BetaGroupsApi(this.getConfiguration(this.options))
     return api
   }
   getBetaLicenseAgreementsApi(): BetaLicenseAgreementsApi {
-    const api = new BetaLicenseAgreementsApi(this.basePath)
-    api.setDefaultAuthentication({ auth: this.auth })
+    const api = new BetaLicenseAgreementsApi(this.getConfiguration(this.options))
     return api
   }
   getBetaTesterInvitationsApi(): BetaTesterInvitationsApi {
-    const api = new BetaTesterInvitationsApi(this.basePath)
-    api.setDefaultAuthentication({ auth: this.auth })
+    const api = new BetaTesterInvitationsApi(this.getConfiguration(this.options))
     return api
   }
   getBetaTestersApi(): BetaTestersApi {
-    const api = new BetaTestersApi(this.basePath)
-    api.setDefaultAuthentication({ auth: this.auth })
+    const api = new BetaTestersApi(this.getConfiguration(this.options))
     return api
   }
   getBuildBetaDetailsApi(): BuildBetaDetailsApi {
-    const api = new BuildBetaDetailsApi(this.basePath)
-    api.setDefaultAuthentication({ auth: this.auth })
+    const api = new BuildBetaDetailsApi(this.getConfiguration(this.options))
     return api
   }
   getBuildBetaNotificationsApi(): BuildBetaNotificationsApi {
-    const api = new BuildBetaNotificationsApi(this.basePath)
-    api.setDefaultAuthentication({ auth: this.auth })
+    const api = new BuildBetaNotificationsApi(this.getConfiguration(this.options))
     return api
   }
   getBuildBundlesApi(): BuildBundlesApi {
-    const api = new BuildBundlesApi(this.basePath)
-    api.setDefaultAuthentication({ auth: this.auth })
+    const api = new BuildBundlesApi(this.getConfiguration(this.options))
     return api
   }
   getBuildsApi(): BuildsApi {
-    const api = new BuildsApi(this.basePath)
-    api.setDefaultAuthentication({ auth: this.auth })
+    const api = new BuildsApi(this.getConfiguration(this.options))
     return api
   }
   getBundleIdCapabilitiesApi(): BundleIdCapabilitiesApi {
-    const api = new BundleIdCapabilitiesApi(this.basePath)
-    api.setDefaultAuthentication({ auth: this.auth })
+    const api = new BundleIdCapabilitiesApi(this.getConfiguration(this.options))
     return api
   }
   getBundleIdsApi(): BundleIdsApi {
-    const api = new BundleIdsApi(this.basePath)
-    api.setDefaultAuthentication({ auth: this.auth })
+    const api = new BundleIdsApi(this.getConfiguration(this.options))
     return api
   }
   getCertificatesApi(): CertificatesApi {
-    const api = new CertificatesApi(this.basePath)
-    api.setDefaultAuthentication({ auth: this.auth })
+    const api = new CertificatesApi(this.getConfiguration(this.options))
     return api
   }
   getCiArtifactsApi(): CiArtifactsApi {
-    const api = new CiArtifactsApi(this.basePath)
-    api.setDefaultAuthentication({ auth: this.auth })
+    const api = new CiArtifactsApi(this.getConfiguration(this.options))
     return api
   }
   getCiBuildActionsApi(): CiBuildActionsApi {
-    const api = new CiBuildActionsApi(this.basePath)
-    api.setDefaultAuthentication({ auth: this.auth })
+    const api = new CiBuildActionsApi(this.getConfiguration(this.options))
     return api
   }
   getCiBuildRunsApi(): CiBuildRunsApi {
-    const api = new CiBuildRunsApi(this.basePath)
-    api.setDefaultAuthentication({ auth: this.auth })
+    const api = new CiBuildRunsApi(this.getConfiguration(this.options))
     return api
   }
   getCiIssuesApi(): CiIssuesApi {
-    const api = new CiIssuesApi(this.basePath)
-    api.setDefaultAuthentication({ auth: this.auth })
+    const api = new CiIssuesApi(this.getConfiguration(this.options))
     return api
   }
   getCiMacOsVersionsApi(): CiMacOsVersionsApi {
-    const api = new CiMacOsVersionsApi(this.basePath)
-    api.setDefaultAuthentication({ auth: this.auth })
+    const api = new CiMacOsVersionsApi(this.getConfiguration(this.options))
     return api
   }
   getCiProductsApi(): CiProductsApi {
-    const api = new CiProductsApi(this.basePath)
-    api.setDefaultAuthentication({ auth: this.auth })
+    const api = new CiProductsApi(this.getConfiguration(this.options))
     return api
   }
   getCiTestResultsApi(): CiTestResultsApi {
-    const api = new CiTestResultsApi(this.basePath)
-    api.setDefaultAuthentication({ auth: this.auth })
+    const api = new CiTestResultsApi(this.getConfiguration(this.options))
     return api
   }
   getCiWorkflowsApi(): CiWorkflowsApi {
-    const api = new CiWorkflowsApi(this.basePath)
-    api.setDefaultAuthentication({ auth: this.auth })
+    const api = new CiWorkflowsApi(this.getConfiguration(this.options))
     return api
   }
   getCiXcodeVersionsApi(): CiXcodeVersionsApi {
-    const api = new CiXcodeVersionsApi(this.basePath)
-    api.setDefaultAuthentication({ auth: this.auth })
+    const api = new CiXcodeVersionsApi(this.getConfiguration(this.options))
     return api
   }
   getCustomerReviewResponsesApi(): CustomerReviewResponsesApi {
-    const api = new CustomerReviewResponsesApi(this.basePath)
-    api.setDefaultAuthentication({ auth: this.auth })
+    const api = new CustomerReviewResponsesApi(this.getConfiguration(this.options))
     return api
   }
   getCustomerReviewsApi(): CustomerReviewsApi {
-    const api = new CustomerReviewsApi(this.basePath)
-    api.setDefaultAuthentication({ auth: this.auth })
+    const api = new CustomerReviewsApi(this.getConfiguration(this.options))
     return api
   }
   getDevicesApi(): DevicesApi {
-    const api = new DevicesApi(this.basePath)
-    api.setDefaultAuthentication({ auth: this.auth })
+    const api = new DevicesApi(this.getConfiguration(this.options))
     return api
   }
   getDiagnosticSignaturesApi(): DiagnosticSignaturesApi {
-    const api = new DiagnosticSignaturesApi(this.basePath)
-    api.setDefaultAuthentication({ auth: this.auth })
+    const api = new DiagnosticSignaturesApi(this.getConfiguration(this.options))
     return api
   }
   getEndUserLicenseAgreementsApi(): EndUserLicenseAgreementsApi {
-    const api = new EndUserLicenseAgreementsApi(this.basePath)
-    api.setDefaultAuthentication({ auth: this.auth })
+    const api = new EndUserLicenseAgreementsApi(this.getConfiguration(this.options))
     return api
   }
   getFinanceReportsApi(): FinanceReportsApi {
-    const api = new FinanceReportsApi(this.basePath)
-    api.setDefaultAuthentication({ auth: this.auth })
+    const api = new FinanceReportsApi(this.getConfiguration(this.options))
     return api
   }
   getGameCenterEnabledVersionsApi(): GameCenterEnabledVersionsApi {
-    const api = new GameCenterEnabledVersionsApi(this.basePath)
-    api.setDefaultAuthentication({ auth: this.auth })
+    const api = new GameCenterEnabledVersionsApi(this.getConfiguration(this.options))
     return api
   }
   getInAppPurchaseAppStoreReviewScreenshotsApi(): InAppPurchaseAppStoreReviewScreenshotsApi {
-    const api = new InAppPurchaseAppStoreReviewScreenshotsApi(this.basePath)
-    api.setDefaultAuthentication({ auth: this.auth })
+    const api = new InAppPurchaseAppStoreReviewScreenshotsApi(this.getConfiguration(this.options))
     return api
   }
   getInAppPurchaseAvailabilitiesApi(): InAppPurchaseAvailabilitiesApi {
-    const api = new InAppPurchaseAvailabilitiesApi(this.basePath)
-    api.setDefaultAuthentication({ auth: this.auth })
+    const api = new InAppPurchaseAvailabilitiesApi(this.getConfiguration(this.options))
     return api
   }
   getInAppPurchaseContentsApi(): InAppPurchaseContentsApi {
-    const api = new InAppPurchaseContentsApi(this.basePath)
-    api.setDefaultAuthentication({ auth: this.auth })
+    const api = new InAppPurchaseContentsApi(this.getConfiguration(this.options))
     return api
   }
   getInAppPurchaseLocalizationsApi(): InAppPurchaseLocalizationsApi {
-    const api = new InAppPurchaseLocalizationsApi(this.basePath)
-    api.setDefaultAuthentication({ auth: this.auth })
+    const api = new InAppPurchaseLocalizationsApi(this.getConfiguration(this.options))
     return api
   }
   getInAppPurchasePriceSchedulesApi(): InAppPurchasePriceSchedulesApi {
-    const api = new InAppPurchasePriceSchedulesApi(this.basePath)
-    api.setDefaultAuthentication({ auth: this.auth })
+    const api = new InAppPurchasePriceSchedulesApi(this.getConfiguration(this.options))
     return api
   }
   getInAppPurchaseSubmissionsApi(): InAppPurchaseSubmissionsApi {
-    const api = new InAppPurchaseSubmissionsApi(this.basePath)
-    api.setDefaultAuthentication({ auth: this.auth })
+    const api = new InAppPurchaseSubmissionsApi(this.getConfiguration(this.options))
     return api
   }
   getInAppPurchasesApi(): InAppPurchasesApi {
-    const api = new InAppPurchasesApi(this.basePath)
-    api.setDefaultAuthentication({ auth: this.auth })
+    const api = new InAppPurchasesApi(this.getConfiguration(this.options))
     return api
   }
   getPreReleaseVersionsApi(): PreReleaseVersionsApi {
-    const api = new PreReleaseVersionsApi(this.basePath)
-    api.setDefaultAuthentication({ auth: this.auth })
+    const api = new PreReleaseVersionsApi(this.getConfiguration(this.options))
     return api
   }
   getProfilesApi(): ProfilesApi {
-    const api = new ProfilesApi(this.basePath)
-    api.setDefaultAuthentication({ auth: this.auth })
+    const api = new ProfilesApi(this.getConfiguration(this.options))
     return api
   }
   getPromotedPurchaseImagesApi(): PromotedPurchaseImagesApi {
-    const api = new PromotedPurchaseImagesApi(this.basePath)
-    api.setDefaultAuthentication({ auth: this.auth })
+    const api = new PromotedPurchaseImagesApi(this.getConfiguration(this.options))
     return api
   }
   getPromotedPurchasesApi(): PromotedPurchasesApi {
-    const api = new PromotedPurchasesApi(this.basePath)
-    api.setDefaultAuthentication({ auth: this.auth })
+    const api = new PromotedPurchasesApi(this.getConfiguration(this.options))
     return api
   }
   getReviewSubmissionItemsApi(): ReviewSubmissionItemsApi {
-    const api = new ReviewSubmissionItemsApi(this.basePath)
-    api.setDefaultAuthentication({ auth: this.auth })
+    const api = new ReviewSubmissionItemsApi(this.getConfiguration(this.options))
     return api
   }
   getReviewSubmissionsApi(): ReviewSubmissionsApi {
-    const api = new ReviewSubmissionsApi(this.basePath)
-    api.setDefaultAuthentication({ auth: this.auth })
+    const api = new ReviewSubmissionsApi(this.getConfiguration(this.options))
     return api
   }
   getRoutingAppCoveragesApi(): RoutingAppCoveragesApi {
-    const api = new RoutingAppCoveragesApi(this.basePath)
-    api.setDefaultAuthentication({ auth: this.auth })
+    const api = new RoutingAppCoveragesApi(this.getConfiguration(this.options))
     return api
   }
   getSalesReportsApi(): SalesReportsApi {
-    const api = new SalesReportsApi(this.basePath)
-    api.setDefaultAuthentication({ auth: this.auth })
+    const api = new SalesReportsApi(this.getConfiguration(this.options))
     return api
   }
   getSandboxTestersApi(): SandboxTestersApi {
-    const api = new SandboxTestersApi(this.basePath)
-    api.setDefaultAuthentication({ auth: this.auth })
+    const api = new SandboxTestersApi(this.getConfiguration(this.options))
     return api
   }
   getSandboxTestersClearPurchaseHistoryRequestApi(): SandboxTestersClearPurchaseHistoryRequestApi {
-    const api = new SandboxTestersClearPurchaseHistoryRequestApi(this.basePath)
-    api.setDefaultAuthentication({ auth: this.auth })
+    const api = new SandboxTestersClearPurchaseHistoryRequestApi(this.getConfiguration(this.options))
     return api
   }
   getScmGitReferencesApi(): ScmGitReferencesApi {
-    const api = new ScmGitReferencesApi(this.basePath)
-    api.setDefaultAuthentication({ auth: this.auth })
+    const api = new ScmGitReferencesApi(this.getConfiguration(this.options))
     return api
   }
   getScmProvidersApi(): ScmProvidersApi {
-    const api = new ScmProvidersApi(this.basePath)
-    api.setDefaultAuthentication({ auth: this.auth })
+    const api = new ScmProvidersApi(this.getConfiguration(this.options))
     return api
   }
   getScmPullRequestsApi(): ScmPullRequestsApi {
-    const api = new ScmPullRequestsApi(this.basePath)
-    api.setDefaultAuthentication({ auth: this.auth })
+    const api = new ScmPullRequestsApi(this.getConfiguration(this.options))
     return api
   }
   getScmRepositoriesApi(): ScmRepositoriesApi {
-    const api = new ScmRepositoriesApi(this.basePath)
-    api.setDefaultAuthentication({ auth: this.auth })
+    const api = new ScmRepositoriesApi(this.getConfiguration(this.options))
     return api
   }
   getSubscriptionAppStoreReviewScreenshotsApi(): SubscriptionAppStoreReviewScreenshotsApi {
-    const api = new SubscriptionAppStoreReviewScreenshotsApi(this.basePath)
-    api.setDefaultAuthentication({ auth: this.auth })
+    const api = new SubscriptionAppStoreReviewScreenshotsApi(this.getConfiguration(this.options))
     return api
   }
   getSubscriptionAvailabilitiesApi(): SubscriptionAvailabilitiesApi {
-    const api = new SubscriptionAvailabilitiesApi(this.basePath)
-    api.setDefaultAuthentication({ auth: this.auth })
+    const api = new SubscriptionAvailabilitiesApi(this.getConfiguration(this.options))
     return api
   }
   getSubscriptionGracePeriodsApi(): SubscriptionGracePeriodsApi {
-    const api = new SubscriptionGracePeriodsApi(this.basePath)
-    api.setDefaultAuthentication({ auth: this.auth })
+    const api = new SubscriptionGracePeriodsApi(this.getConfiguration(this.options))
     return api
   }
   getSubscriptionGroupLocalizationsApi(): SubscriptionGroupLocalizationsApi {
-    const api = new SubscriptionGroupLocalizationsApi(this.basePath)
-    api.setDefaultAuthentication({ auth: this.auth })
+    const api = new SubscriptionGroupLocalizationsApi(this.getConfiguration(this.options))
     return api
   }
   getSubscriptionGroupSubmissionsApi(): SubscriptionGroupSubmissionsApi {
-    const api = new SubscriptionGroupSubmissionsApi(this.basePath)
-    api.setDefaultAuthentication({ auth: this.auth })
+    const api = new SubscriptionGroupSubmissionsApi(this.getConfiguration(this.options))
     return api
   }
   getSubscriptionGroupsApi(): SubscriptionGroupsApi {
-    const api = new SubscriptionGroupsApi(this.basePath)
-    api.setDefaultAuthentication({ auth: this.auth })
+    const api = new SubscriptionGroupsApi(this.getConfiguration(this.options))
     return api
   }
   getSubscriptionIntroductoryOffersApi(): SubscriptionIntroductoryOffersApi {
-    const api = new SubscriptionIntroductoryOffersApi(this.basePath)
-    api.setDefaultAuthentication({ auth: this.auth })
+    const api = new SubscriptionIntroductoryOffersApi(this.getConfiguration(this.options))
     return api
   }
   getSubscriptionLocalizationsApi(): SubscriptionLocalizationsApi {
-    const api = new SubscriptionLocalizationsApi(this.basePath)
-    api.setDefaultAuthentication({ auth: this.auth })
+    const api = new SubscriptionLocalizationsApi(this.getConfiguration(this.options))
     return api
   }
   getSubscriptionOfferCodeCustomCodesApi(): SubscriptionOfferCodeCustomCodesApi {
-    const api = new SubscriptionOfferCodeCustomCodesApi(this.basePath)
-    api.setDefaultAuthentication({ auth: this.auth })
+    const api = new SubscriptionOfferCodeCustomCodesApi(this.getConfiguration(this.options))
     return api
   }
   getSubscriptionOfferCodeOneTimeUseCodesApi(): SubscriptionOfferCodeOneTimeUseCodesApi {
-    const api = new SubscriptionOfferCodeOneTimeUseCodesApi(this.basePath)
-    api.setDefaultAuthentication({ auth: this.auth })
+    const api = new SubscriptionOfferCodeOneTimeUseCodesApi(this.getConfiguration(this.options))
     return api
   }
   getSubscriptionOfferCodesApi(): SubscriptionOfferCodesApi {
-    const api = new SubscriptionOfferCodesApi(this.basePath)
-    api.setDefaultAuthentication({ auth: this.auth })
+    const api = new SubscriptionOfferCodesApi(this.getConfiguration(this.options))
     return api
   }
   getSubscriptionPricePointsApi(): SubscriptionPricePointsApi {
-    const api = new SubscriptionPricePointsApi(this.basePath)
-    api.setDefaultAuthentication({ auth: this.auth })
+    const api = new SubscriptionPricePointsApi(this.getConfiguration(this.options))
     return api
   }
   getSubscriptionPricesApi(): SubscriptionPricesApi {
-    const api = new SubscriptionPricesApi(this.basePath)
-    api.setDefaultAuthentication({ auth: this.auth })
+    const api = new SubscriptionPricesApi(this.getConfiguration(this.options))
     return api
   }
   getSubscriptionPromotionalOffersApi(): SubscriptionPromotionalOffersApi {
-    const api = new SubscriptionPromotionalOffersApi(this.basePath)
-    api.setDefaultAuthentication({ auth: this.auth })
+    const api = new SubscriptionPromotionalOffersApi(this.getConfiguration(this.options))
     return api
   }
   getSubscriptionSubmissionsApi(): SubscriptionSubmissionsApi {
-    const api = new SubscriptionSubmissionsApi(this.basePath)
-    api.setDefaultAuthentication({ auth: this.auth })
+    const api = new SubscriptionSubmissionsApi(this.getConfiguration(this.options))
     return api
   }
   getSubscriptionsApi(): SubscriptionsApi {
-    const api = new SubscriptionsApi(this.basePath)
-    api.setDefaultAuthentication({ auth: this.auth })
+    const api = new SubscriptionsApi(this.getConfiguration(this.options))
     return api
   }
   getTerritoriesApi(): TerritoriesApi {
-    const api = new TerritoriesApi(this.basePath)
-    api.setDefaultAuthentication({ auth: this.auth })
+    const api = new TerritoriesApi(this.getConfiguration(this.options))
     return api
   }
   getUserInvitationsApi(): UserInvitationsApi {
-    const api = new UserInvitationsApi(this.basePath)
-    api.setDefaultAuthentication({ auth: this.auth })
+    const api = new UserInvitationsApi(this.getConfiguration(this.options))
     return api
   }
   getUsersApi(): UsersApi {
-    const api = new UsersApi(this.basePath)
-    api.setDefaultAuthentication({ auth: this.auth })
+    const api = new UsersApi(this.getConfiguration(this.options))
     return api
   }
 }

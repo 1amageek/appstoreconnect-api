@@ -1,21 +1,23 @@
 {
   "compilerOptions": {
-    "module": "commonjs",
-    "esModuleInterop": true,
-    "target": "es6",
-    "moduleResolution": "node",
-    "sourceMap": true,
-    "outDir": "dist",
-    "baseUrl": ".",
+    "target": "es2018",
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "outDir": "lib",
+    "forceConsistentCasingInFileNames": true,
     "noImplicitAny": false,
-    "strictNullChecks": false,
-    "noImplicitThis": false,
-    "alwaysStrict": false,
+    "esModuleInterop": true,
+		"module": "commonjs",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "incremental": true
   },
-  "include": [
-    "src/**/*.ts",
-    "src/**/*.json"
-  ],
+	"include": [
+		"src/**/*.ts",
+		"src/**/*.json"
+	],
   "exclude": [
     "node_modules",
     "src/_api"
